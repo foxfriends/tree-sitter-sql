@@ -968,6 +968,7 @@ module.exports = grammar({
         $._identifier,
         optional(seq("(", commaSep1($._identifier), ")")),
         choice($.values_clause, $.select_statement, $.set_clause),
+        optional($.returning_clause),
       ),
     values_clause: $ =>
       seq(
@@ -979,6 +980,12 @@ module.exports = grammar({
         optional($.fetch_clause),
       ),
     values_clause_item: $ => seq("(", commaSep1($._expression), ")"),
+
+    returning_clause: $ =>
+      seq(
+        kw("RETURNING"),
+        $.select_clause_body
+      ),
 
     // DELETE
     // TODO: support returning clauses

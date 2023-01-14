@@ -9046,6 +9046,18 @@
               "name": "set_clause"
             }
           ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "returning_clause"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -9171,6 +9183,24 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "returning_clause": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[rR][eE][tT][uU][rR][nN][iI][nN][gG]"
+          },
+          "named": false,
+          "value": "RETURNING"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "select_clause_body"
         }
       ]
     },

@@ -4340,6 +4340,10 @@
           "named": true
         },
         {
+          "type": "returning_clause",
+          "named": true
+        },
+        {
           "type": "select_statement",
           "named": true
         },
@@ -5445,6 +5449,21 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "returning_clause",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "select_clause_body",
           "named": true
         }
       ]
@@ -8528,6 +8547,10 @@
   },
   {
     "type": "RETURN",
+    "named": false
+  },
+  {
+    "type": "RETURNING",
     "named": false
   },
   {
